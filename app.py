@@ -47,4 +47,4 @@ with gr.Blocks(theme=gr.themes.Default(), fill_height=True) as demo:
     clear.click(lambda: ([], None), None, [chatbot, conversation_id_state], queue=False)
     new_conversation_btn.click(start_new_conversation, [], [conversation_id_state, chatbot, msg])
 
-demo.launch()
+demo.launch(server_name="0.0.0.0", server_port=int(os.getenv("PORT", 7860)))
